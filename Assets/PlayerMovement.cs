@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -8,8 +9,22 @@ public class PlayerMovement : MonoBehaviour
 
     private float releaseDelay;
 
+    private Copy Cp;
+
     private Rigidbody2D rb;
     private SpringJoint2D sj;
+
+    private IEnumerator coroutine;
+
+    GameObject Kopia;
+
+    public Text WinText;
+
+
+    public void YouWin()
+    {
+        WinText.gameObject.SetActive(true);
+    }
 
     private void Awake()
     {
@@ -36,22 +51,44 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnMouseDown()
     {
+
         isPressed = true;
         rb.isKinematic = true;
 
     }
 
+
     private void OnMouseUp()
     {
+        
+
         isPressed = false;
         rb.isKinematic = false;
+
+        float move = Input.GetAxis("Horizontal");
         StartCoroutine(Release());
 
     }
 
+
     private IEnumerator Release()
     {
-        yield return new WaitForSeconds(releaseDelay);
-        sj.enabled = false;
+        while (true)
+        {
+
+            if(Input.GetAxis("Horizontal") > 0)
+                Kopia.GetComponent<Copy>();
+
+           
+                
+
+            yield return new WaitForSeconds(releaseDelay);
+            sj.enabled = false;
+            
+
+        }
+
+       
+
     }
 }

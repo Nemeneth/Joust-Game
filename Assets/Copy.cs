@@ -9,6 +9,8 @@ public class Copy : MonoBehaviour
 
     public Rigidbody2D rigidBody2D;
 
+    public static object Play { get; internal set; }
+
     void Start()
     {
         rigidBody2D = GetComponent<Rigidbody2D>();

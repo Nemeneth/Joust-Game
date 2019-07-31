@@ -62,7 +62,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Copy.cs" />
-    <Compile Include="Assets\Hero.cs" />
+    <Compile Include="Assets\Enemy.cs" />
     <Compile Include="Assets\PlayerMovement.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>F:/Programy/Unity/Projekty/Joust Game/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
